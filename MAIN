@@ -28,7 +28,7 @@ int main() {
         classificacaoCabeca = "Nula";
     }
 
-    //Determinação da classificação das características faciais
+    //Classificação das características faciais
     if (caracteristicasFaciais == "Wackus") {
         classificacaoFacial = "Wackus";
     } else if (caracteristicasFaciais == "Vegitas") {
