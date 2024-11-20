@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    // Variáveis 
+    string formatoCabeca, caracteristicasFaciais, tipoOlhos;
+    string classificacaoCabeca, classificacaoFacial, resultadoFinal;
+
+    // Entrada
+    cout << "Digite o formato da cabeça do monstro (Franken, Zombos, Happy ou Nula): ";
+    cin >> formatoCabeca;
+
+    cout << "Digite as características faciais do monstro (Wackus, Vegitas, Spritem ou Nula): ";
+    cin >> caracteristicasFaciais;
+
+    cout << "Digite o tipo de olhos do monstro (A, B, C ou Nula): ";
+    cin >> tipoOlhos;
+
+    //Determinação da classificação da cabeça
+    if (formatoCabeca == "Franken") {
+        classificacaoCabeca = "Franken";
+    } else if (formatoCabeca == "Zombos") {
+        classificacaoCabeca = "Zombos";
+    } else if (formatoCabeca == "Happy") {
+        classificacaoCabeca = "Happy";
+    } else {
+        classificacaoCabeca = "Nula";
+    }
+
+    //Determinação da classificação das características faciais
+    if (caracteristicasFaciais == "Wackus") {
+        classificacaoFacial = "Wackus";
+    } else if (caracteristicasFaciais == "Vegitas") {
+        classificacaoFacial = "Vegitas";
+    } else if (caracteristicasFaciais == "Spritem") {
+        classificacaoFacial = "Spritem";
+    } else {
+        classificacaoFacial = "Nula";
+    }
+
+    //Verificação de empate nas características faciais
+    if (classificacaoFacial == "Nula") {
+        // Se a classificação facial for "Nula", precisamos verificar os olhos
+        if (tipoOlhos == "A") {
+            classificacaoFacial = "Spritem";
+        } else if (tipoOlhos == "B") {
+            classificacaoFacial = "Wackus";
+        } else if (tipoOlhos == "C") {
+            classificacaoFacial = "Vegitas";
+        } else {
+            classificacaoFacial = "Nula";
+        }
+    }
+
+    //Formatação do resultado final
+    if (classificacaoCabeca == "Nula" || classificacaoFacial == "Nula") {
+        resultadoFinal = "Impossível classificar o monstro";
+    } else {
+        resultadoFinal = classificacaoCabeca + " " + classificacaoFacial;
+    }
+
+    //Resultado final
+    cout << "O monstro foi classificado como: " << resultadoFinal << endl;
+
+    return 0;
+}
